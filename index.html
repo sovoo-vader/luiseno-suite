@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Luiseño Language Toolkit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+  <style>
+    body { margin:0; font-family:sans-serif; background:#f5f5f5; color:#333; }
+    header, footer { background:#005f73; color:white; text-align:center; padding:2rem; }
+    section { min-height:100vh; padding:4rem 2rem; opacity:0; transform:translateY(50px); }
+    section:nth-child(even) { background:#e0fbfc; }
+    .tool { background:white; padding:2rem; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    button { background:#94d2bd; border:none; color:white; padding:0.75rem 1.5rem; border-radius:5px; margin-top:1rem; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Luiseño Language Toolkit</h1>
+    <p>Explore interactive tools for language revitalization</p>
+  </header>
+
+  <section>
+    <div class="tool">
+      <h2>🔡 Morpheme Analyzer</h2>
+      <p>Break down Luiseño words into morphemes and interpret their functions.</p>
+      <button onclick="window.open('https://luiseno-toolkit.streamlit.app/?tool=morph', '_blank')">Try Now</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="tool">
+      <h2>🗣️ Sentence Synthesizer</h2>
+      <p>Build grammatically correct Luiseño sentences.</p>
+      <button onclick="window.open('https://luiseno-toolkit.streamlit.app/?tool=sentence', '_blank')">Launch</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="tool">
+      <h2>🃏 Flashcard Trainer</h2>
+      <p>Practice vocabulary using randomized flashcards.</p>
+      <button onclick="window.open('https://luiseno-toolkit.streamlit.app/?tool=flashcards', '_blank')">Practice</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="tool">
+      <h2>🔠 Morpheme Gloss Aligner</h2>
+      <p>Align Luiseño words with English glosses, morpheme by morpheme.</p>
+      <button onclick="window.open('https://luiseno-toolkit.streamlit.app/?tool=gloss', '_blank')">Explore</button>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Luiseño Toolkit · Built with care and ceremony
+  </footer>
+
+  <script>
+    gsap.utils.toArray('section').forEach(sec => {
+      gsap.fromTo(sec, { opacity:0, y:50 }, {
+        scrollTrigger:{ trigger:sec, start:"top 80%" },
+        opacity:1, y:0, duration:0.6
+      });
+    });
+  </script>
+</body>
+</html>
